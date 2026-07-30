@@ -914,6 +914,7 @@ footer {
   }
 
   .wordmark span,
+  .site-header nav a:first-child,
   .site-header nav a:nth-child(2),
   .site-header nav a:nth-child(3) {
     display: none;
