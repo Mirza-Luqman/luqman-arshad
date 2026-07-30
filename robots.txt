@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://x5cgntw49w-cell.github.io/portfolio/sitemap.xml
+
