@@ -18,7 +18,10 @@ if (reducedMotion || !("IntersectionObserver" in window)) {
   revealItems.forEach((item) => observer.observe(item));
 }
 
-document.getElementById("copyright-year").textContent = new Date().getFullYear();
+const copyrightYear = document.getElementById("copyright-year");
+if (copyrightYear) {
+  copyrightYear.textContent = new Date().getFullYear();
+}
 
 const canvas = document.getElementById("landmark-canvas");
 const context = canvas.getContext("2d");
@@ -82,12 +85,12 @@ function drawFace(width, height) {
       (centerY + Math.sin(angle) * radiusY) / height,
     ]);
   }
-  drawPoints(points, width, height, "#ff9c75", Math.max(1.5, width / 390));
+  drawPoints(points, width, height, "#6fa7ff", Math.max(1.5, width / 390));
   drawPoints(
     [[0.50, 0.32], [0.56, 0.32], [0.53, 0.39], [0.51, 0.44], [0.55, 0.44]],
     width,
     height,
-    "#8ed7c0",
+    "#8ce0d3",
     Math.max(2, width / 330),
   );
 }
@@ -104,10 +107,10 @@ function drawLandmarks() {
   }
 
   context.clearRect(0, 0, width, height);
-  context.fillStyle = "#0b1411";
+  context.fillStyle = "#0c1218";
   context.fillRect(0, 0, width, height);
 
-  context.strokeStyle = "rgba(142, 215, 192, 0.08)";
+  context.strokeStyle = "rgba(140, 224, 211, 0.08)";
   context.lineWidth = 1;
   for (let x = 0; x < width; x += width / 12) {
     context.beginPath();
@@ -122,23 +125,23 @@ function drawLandmarks() {
     context.stroke();
   }
 
-  drawConnections(handPoints, handConnections, width, height, "rgba(142, 215, 192, 0.56)");
-  drawPoints(handPoints, width, height, "#8ed7c0", Math.max(2.2, width / 260));
+  drawConnections(handPoints, handConnections, width, height, "rgba(140, 224, 211, 0.56)");
+  drawPoints(handPoints, width, height, "#8ce0d3", Math.max(2.2, width / 260));
   drawFace(width, height);
-  drawConnections(posePoints, poseConnections, width, height, "rgba(45, 103, 168, 0.8)");
-  drawPoints(posePoints, width, height, "#79aee8", Math.max(2.4, width / 250));
+  drawConnections(posePoints, poseConnections, width, height, "rgba(22, 93, 204, 0.8)");
+  drawPoints(posePoints, width, height, "#6fa7ff", Math.max(2.4, width / 250));
 
-  context.fillStyle = "#dbe5e0";
+  context.fillStyle = "#e7edf1";
   context.font = `700 ${Math.max(10, width / 54)}px ui-monospace, monospace`;
   context.fillText("MULTIMODAL LANDMARK FUSION", width * 0.05, height * 0.08);
-  context.fillStyle = "#8a9992";
+  context.fillStyle = "#91a0ac";
   context.font = `600 ${Math.max(9, width / 68)}px ui-monospace, monospace`;
   context.fillText("21 HAND", width * 0.05, height * 0.94);
   context.fillText("468 FACE", width * 0.42, height * 0.94);
   context.fillText("33 POSE", width * 0.74, height * 0.94);
 
   const lineY = (scanOffset % 1) * height;
-  context.strokeStyle = "rgba(230, 96, 60, 0.45)";
+  context.strokeStyle = "rgba(180, 83, 9, 0.5)";
   context.beginPath();
   context.moveTo(0, lineY);
   context.lineTo(width, lineY);
@@ -160,4 +163,3 @@ if (reducedMotion) {
 }
 
 window.addEventListener("resize", drawLandmarks, { passive: true });
-

@@ -1,7 +1,9 @@
-# Mirza Luqman - Portfolio
+# Luqman Arshad - AI/ML Engineering Portfolio
 
-Recruiter-facing portfolio for AI/ML, computer vision, generative AI, and
-research engineering internships.
+A recruiter-facing technical portfolio for AI/ML, computer vision, generative
+AI, and research engineering internships. The site presents project
+architecture, verification boundaries, reproducible evidence, experience,
+education, and direct contact paths.
 
 ## Local preview
 
@@ -22,3 +24,7 @@ The site links to public source repositories, identifies simulated results as
 simulation, marks exploratory research figures as pilot evidence, and keeps
 competition-specific Stage 2 materials private.
 
+## Public site
+
+The deployed portfolio is available at
+<https://x5cgntw49w-cell.github.io/luqman-arshad/>.
