@@ -5,10 +5,12 @@ AI, and research engineering internships. The site presents project
 architecture, verification boundaries, reproducible evidence, experience,
 education, and direct contact paths.
 
-The interface includes four visual project exhibits, an interactive
-prove-or-disprove terminal, a recruiter-safe Stage 2 architecture diagram, and
-a discipline filter for the complete project library. It is implemented as a
-dependency-free static site for fast GitHub Pages delivery.
+The interface includes five visual project exhibits, led by the deployed
+ChronoFret multimodal product, an interactive prove-or-disprove terminal, a
+recruiter-safe Stage 2 architecture diagram, a role-scoped PipGuard research
+communication case, and a discipline filter for the complete project library.
+It is implemented as a dependency-free static site for fast GitHub Pages
+delivery.
 
 ## Local preview
 
@@ -28,6 +30,10 @@ Pushes to `main` deploy automatically to GitHub Pages through
 The site links to public source repositories, identifies simulated results as
 simulation, marks exploratory research figures as pilot evidence, and keeps
 competition-specific Stage 2 materials private.
+
+Team research is scoped by role: the PipGuard source presentation identifies
+Luqman Arshad as presenter and Chao Qin as project leader. Team-reported metrics
+are labeled as quoted evidence rather than independently reproduced results.
 
 ## Public site
 
