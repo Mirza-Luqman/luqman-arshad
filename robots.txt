@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://x5cgntw49w-cell.github.io/luqman-arshad/sitemap.xml
+Sitemap: https://mirza-luqman.github.io/luqman-arshad/sitemap.xml

@@ -1,38 +1,52 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b1117">
     <meta
       name="description"
-      content="Luqman Arshad is an AI/ML engineering student building reliable systems across multimodal sensing, computer vision, mathematical reasoning, and model evaluation."
+      content="Luqman Arshad is an AI/ML engineering student at Harbin Engineering University building verifiable systems across formal verification, multimodal sensing, computer vision, ML observability, and developer tooling."
     >
-    <meta property="og:title" content="Luqman Arshad | AI/ML Engineer">
+    <meta property="og:title" content="Luqman Arshad | AI/ML & Verification Systems Engineer">
     <meta
       property="og:description"
-      content="Live multimodal products, formal reasoning, calibrated model evaluation, and reproducible ML engineering."
+      content="12 engineered systems across formal verification (Lean 4, cvc5, Z3), live multimodal AI, ML observability, accessibility testing, and security tooling."
     >
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://x5cgntw49w-cell.github.io/luqman-arshad/">
+    <meta property="og:url" content="https://mirza-luqman.github.io/luqman-arshad/">
     <meta
       property="og:image"
-      content="https://x5cgntw49w-cell.github.io/luqman-arshad/assets/luqman-arshad-portrait.jpg"
+      content="https://mirza-luqman.github.io/luqman-arshad/assets/luqman-arshad-portrait.jpg"
     >
-    <title>Luqman Arshad | AI/ML Engineer</title>
-    <link rel="canonical" href="https://x5cgntw49w-cell.github.io/luqman-arshad/">
+    <title>Luqman Arshad | AI/ML &amp; Verification Systems Engineer</title>
+    <link rel="canonical" href="https://mirza-luqman.github.io/luqman-arshad/">
     <link rel="icon" href="assets/luqman-arshad-portrait.jpg" type="image/jpeg">
     <link rel="preload" href="assets/luqman-arshad-portrait.jpg" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    >
     <link rel="stylesheet" href="styles.css">
-    <script>document.documentElement.classList.add("js");</script>
+    <script>
+      document.documentElement.classList.add("js");
+      try {
+        var savedTheme = localStorage.getItem("la-theme");
+        if (savedTheme === "dark" || savedTheme === "light") {
+          document.documentElement.setAttribute("data-theme", savedTheme);
+        }
+      } catch (e) {}
+    </script>
     <script src="script.js" defer></script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "Luqman Arshad",
-        "url": "https://x5cgntw49w-cell.github.io/luqman-arshad/",
-        "image": "https://x5cgntw49w-cell.github.io/luqman-arshad/assets/luqman-arshad-portrait.jpg",
+        "url": "https://mirza-luqman.github.io/luqman-arshad/",
+        "image": "https://mirza-luqman.github.io/luqman-arshad/assets/luqman-arshad-portrait.jpg",
         "email": "mailto:arshadluqman474@gmail.com",
         "telephone": "+86 198 4547 5712",
         "jobTitle": "AI/ML Engineering Student",
@@ -41,7 +55,7 @@
           "name": "Harbin Engineering University"
         },
         "sameAs": [
-          "https://github.com/x5cgntw49w-cell",
+          "https://github.com/Mirza-Luqman",
           "https://www.linkedin.com/in/luqman-arshad-72a9812a8"
         ]
       }
@@ -50,411 +64,1437 @@
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Luqman Arshad, home">
-        <strong>Luqman Arshad</strong>
-        <span>AI / ML Engineering</span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#research">Research</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
-        <a class="nav-resume" href="assets/luqman-arshad-resume.pdf" target="_blank">Resume</a>
-      </nav>
+    <header class="site-header" id="site-header">
+      <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Luqman Arshad, home">
+          <span class="brand-mark" aria-hidden="true">LA</span>
+          <span class="brand-text">
+            <strong>Luqman Arshad</strong>
+            <span>AI / ML &amp; Verification</span>
+          </span>
+        </a>
+
+        <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+          <a href="#work" data-nav="work">Systems</a>
+          <a href="#research" data-nav="research">Research</a>
+          <a href="#library" data-nav="library">Library</a>
+          <a href="#experience" data-nav="experience">Experience</a>
+          <a href="#skills" data-nav="skills">Skills</a>
+          <a href="#contact" data-nav="contact">Contact</a>
+        </nav>
+
+        <div class="header-controls">
+          <button
+            type="button"
+            class="theme-toggle"
+            id="theme-toggle"
+            aria-label="Toggle color theme"
+            title="Toggle Light / Dark theme"
+          >
+            <svg class="icon-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+            </svg>
+            <svg class="icon-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <span class="theme-label" id="theme-label">Dark</span>
+          </button>
+
+          <a class="nav-resume" href="assets/luqman-arshad-resume.pdf" target="_blank" rel="noreferrer">
+            Resume
+            <span aria-hidden="true">&#8599;</span>
+          </a>
+
+          <button
+            type="button"
+            class="mobile-menu-btn"
+            id="mobile-menu-btn"
+            aria-expanded="false"
+            aria-controls="mobile-drawer"
+            aria-label="Toggle navigation menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="mobile-drawer" id="mobile-drawer" hidden>
+        <nav aria-label="Mobile navigation">
+          <a href="#work">01 · Flagship Systems</a>
+          <a href="#research">02 · Formal Research</a>
+          <a href="#communication">03 · PipGuard Concept</a>
+          <a href="#library">04 · Full Project Library (12)</a>
+          <a href="#practice">05 · Engineering Practice</a>
+          <a href="#experience">06 · Experience &amp; Milestones</a>
+          <a href="#skills">07 · Technical Foundation</a>
+          <a href="#contact">08 · Contact</a>
+          <a class="drawer-resume" href="assets/luqman-arshad-resume.pdf" target="_blank" rel="noreferrer">Download Resume (PDF) &#8599;</a>
+        </nav>
+      </div>
     </header>
 
     <main id="main">
+      <!-- ==================== HERO ==================== -->
       <section class="hero" id="top" aria-labelledby="hero-title">
-        <img
-          class="hero-portrait"
-          src="assets/luqman-arshad-portrait.jpg"
-          alt="Luqman Arshad in professional attire"
-          width="2076"
-          height="2647"
-        >
-        <div class="hero-copy">
-          <p class="availability"><span aria-hidden="true"></span>Open to 2026-2027 internships</p>
-          <p class="overline">AI / ML ENGINEERING STUDENT</p>
-          <h1 id="hero-title">Luqman Arshad</h1>
-          <p class="hero-position">Building AI systems that hold up under inspection.</p>
-          <p class="hero-summary">
-            My work combines multimodal sensing, formal reasoning, computer
-            vision, and model evaluation with explicit tests, deployed artifacts,
-            and clear verification boundaries.
-          </p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#work">Explore selected work</a>
-            <a class="button button-light" href="mailto:arshadluqman474@gmail.com">Email me</a>
+        <div class="hero-backdrop" aria-hidden="true"></div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <div class="availability-row">
+              <p class="availability">
+                <span class="pulse-dot" aria-hidden="true"></span>
+                Open to 2026–2027 AI / ML &amp; Verification Internships
+              </p>
+              <span class="version-pill">PORTFOLIO v4.0</span>
+            </div>
+
+            <p class="overline">AI / ML &amp; FORMAL VERIFICATION STUDENT</p>
+            <h1 id="hero-title">Luqman Arshad</h1>
+            <p class="hero-position">
+              Engineering AI, multimodal, and verification systems that hold up under inspection.
+            </p>
+            <p class="hero-summary">
+              Third-year BSc Artificial Intelligence student at Harbin Engineering University.
+              I build reproducible software across formal equivalence verification (LLVM IR, cvc5, Lean 4, Z3),
+              live multimodal sensing, calibrated ML evaluation, and offline developer security tools—always
+              paired with explicit tests, deployed artifacts, and honest claim boundaries.
+            </p>
+
+            <ul class="hero-domains" aria-label="Core engineering focus areas">
+              <li>Formal Verification &amp; SMT</li>
+              <li>Multimodal AI &amp; CV</li>
+              <li>ML Observability &amp; Eval</li>
+              <li>Developer &amp; Security Tooling</li>
+            </ul>
+
+            <div class="hero-actions">
+              <a class="button button-primary" href="#work">
+                Explore 9 exhibits
+                <span aria-hidden="true">&darr;</span>
+              </a>
+              <a class="button button-secondary" href="#research">
+                Formal research
+              </a>
+              <a class="button button-ghost" href="mailto:arshadluqman474@gmail.com">
+                Email me
+              </a>
+            </div>
+
+            <div class="hero-meta" aria-label="Profile metadata">
+              <div>
+                <span>LOCATION</span>
+                <strong>Harbin, China</strong>
+              </div>
+              <div>
+                <span>EDUCATION</span>
+                <strong>BSc Artificial Intelligence</strong>
+              </div>
+              <div>
+                <span>GRADUATION</span>
+                <strong>Expected July 2027</strong>
+              </div>
+              <div>
+                <span>GITHUB</span>
+                <a href="https://github.com/Mirza-Luqman" target="_blank" rel="noreferrer">@Mirza-Luqman &#8599;</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-stage">
+            <div class="portrait-frame">
+              <div class="corner-tick tl" aria-hidden="true"></div>
+              <div class="corner-tick tr" aria-hidden="true"></div>
+              <div class="corner-tick bl" aria-hidden="true"></div>
+              <div class="corner-tick br" aria-hidden="true"></div>
+              <img
+                class="hero-portrait"
+                src="assets/luqman-arshad-portrait.jpg"
+                alt="Luqman Arshad in professional attire"
+                width="2076"
+                height="2647"
+              >
+              <div class="portrait-badge badge-top" aria-label="SAIR Stage 1 ranking">
+                <span class="badge-dot"></span>
+                <div>
+                  <strong>1st University · ~80th Overall</strong>
+                  <small>SAIR Stage 1 · 99.6% parse</small>
+                </div>
+              </div>
+              <div class="portrait-badge badge-bottom" aria-label="Verification test coverage">
+                <div>
+                  <strong>502 Verified Tests</strong>
+                  <small>184 public CI · 318 C2Rust v1.2</small>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="hero-meta" aria-label="Profile summary">
-          <span>Harbin, China</span>
-          <span>BSc Artificial Intelligence</span>
-          <span>Graduating July 2027</span>
-        </div>
       </section>
 
-      <section class="signal-band" aria-label="Selected outcomes">
+      <!-- ==================== SIGNAL BAND ==================== -->
+      <section class="signal-band" aria-label="Verified portfolio metrics">
         <div class="shell signal-grid">
-          <div><strong>1st</strong><span>University-wide, SAIR Stage 1</span></div>
-          <div><strong>~80th</strong><span>Overall competition ranking</span></div>
-          <div><strong>17</strong><span>Tests in deployed ChronoFret</span></div>
-          <div><strong>29</strong><span>Tests in Model Observatory</span></div>
+          <div class="signal-item">
+            <span class="signal-tag">PORTFOLIO SCOPE</span>
+            <strong>12</strong>
+            <p>Engineered systems — 10 public repositories (3 live web deployments) plus 2 private formal-methods research tracks.</p>
+          </div>
+          <div class="signal-item">
+            <span class="signal-tag">AUTOMATED EVIDENCE</span>
+            <strong>502</strong>
+            <p>Passing automated tests verified across repositories: 184 in public CI workflows and 318 in the C-to-Rust Verifier v1.2 suite.</p>
+          </div>
+          <div class="signal-item">
+            <span class="signal-tag">SAIR BENCHMARK</span>
+            <strong>1st / ~80th</strong>
+            <p>University-wide and overall Stage 1 rank in the SAIR Mathematics Distillation Challenge (58.0% accuracy, 43.4% F1, 99.6% parse).</p>
+          </div>
+          <div class="signal-item">
+            <span class="signal-tag">COMPOSITIONAL SMT</span>
+            <strong>231&times;</strong>
+            <p>Peak solver speedup at depth k=6 via formal FunctionSummary reuse in cvc5 with 0 false proofs across all three benchmark sets.</p>
+          </div>
         </div>
       </section>
 
+      <!-- ==================== 01 / SELECTED SYSTEMS ==================== -->
       <section class="work" id="work" aria-labelledby="work-title">
         <div class="shell">
           <header class="section-head reveal">
             <div>
-              <p class="section-index">01 / SELECTED WORK</p>
+              <p class="section-index">01 / FLAGSHIP SYSTEMS</p>
               <h2 id="work-title">Systems, not screenshots.</h2>
             </div>
             <p>
-              Five projects selected for technical range: a deployed multimodal
-              product, verified reasoning, ML observability, perception, and
-              uncertainty analysis.
-              Every claim below links to runnable code or a generated artifact.
+              Nine exhibits spanning deployed web applications, interactive developer tools,
+              formal verification harnesses, real-time vision, LLM evaluation, and embedded control.
+              Click <strong>Technical details</strong> on any system to open its architecture flow,
+              verified evidence, CLI commands, and explicit claim boundaries.
             </p>
           </header>
 
           <div class="feature-grid">
+            <!-- 01: CHRONOFRET (Full-Width Flagship) -->
             <article class="feature-card feature-wide reveal" data-accent="teal">
-              <figure class="feature-media image-media chronofret-media">
-                <img
-                  src="assets/chronofret-dashboard.png"
-                  alt="ChronoFret longitudinal guitar performance dashboard"
-                  width="1440"
-                  height="900"
-                  loading="eager"
-                >
-                <figcaption>Verified public deployment with deterministic demo data</figcaption>
-              </figure>
+              <div class="feature-media-col">
+                <figure class="feature-media image-media chronofret-media">
+                  <img
+                    src="assets/chronofret-dashboard.png"
+                    alt="ChronoFret longitudinal guitar performance dashboard"
+                    width="1440"
+                    height="900"
+                    loading="eager"
+                  >
+                  <figcaption>Deployed public SPA · Deterministic demo dataset + live sensor pipeline</figcaption>
+                </figure>
+                <div class="mini-telemetry" role="region" aria-label="ChronoFret longitudinal models">
+                  <div class="mini-telemetry-tabs" role="tablist" aria-label="Select ChronoFret model">
+                    <button type="button" role="tab" aria-selected="true" data-cf-model="chronotype">Chronotype</button>
+                    <button type="button" role="tab" aria-selected="false" data-cf-model="decay">Skill Decay</button>
+                    <button type="button" role="tab" aria-selected="false" data-cf-model="fatigue">Fatigue Coupling</button>
+                    <button type="button" role="tab" aria-selected="false" data-cf-model="drift">Instrument Drift</button>
+                  </div>
+                  <div class="mini-telemetry-body" id="cf-model-detail" aria-live="polite">
+                    <strong>Bayesian-shrinkage hourly windows</strong>
+                    <span>Identifies peak combined pitch + timing hours (e.g., 21:00–23:00 in demo dataset) while protecting against sparse hourly samples.</span>
+                  </div>
+                </div>
+              </div>
+
               <div class="feature-copy">
-                <div class="feature-topline"><span>MULTIMODAL AI PRODUCT</span><span>01</span></div>
+                <div class="feature-topline">
+                  <span class="category-chip chip-teal">MULTIMODAL AI PRODUCT</span>
+                  <span class="card-num">01 / LIVE</span>
+                </div>
                 <h3>ChronoFret</h3>
-                <p>Local-first performance coach for real guitar, fusing YIN pitch detection, MediaPipe hand and face features, ambient light, idle events, and personal time-series models.</p>
+                <p>
+                  Local-first longitudinal guitar performance coach combining Web Audio YIN pitch detection,
+                  MediaPipe hand and face landmarks, ambient luminance, and idle-break tracking into four
+                  personal time-series models stored exclusively in browser IndexedDB.
+                </p>
+                <ul class="tech-pills" aria-label="ChronoFret stack">
+                  <li>TypeScript</li>
+                  <li>React</li>
+                  <li>Web Audio / YIN</li>
+                  <li>MediaPipe</li>
+                  <li>IndexedDB</li>
+                  <li>ICS Export</li>
+                </ul>
                 <dl class="feature-evidence">
-                  <div><dt>Models</dt><dd>Chronotype / decay / fatigue / tuning</dd></div>
-                  <div><dt>Verification</dt><dd>17 tests + deployed demo</dd></div>
+                  <div><dt>Models</dt><dd>Chronotype · Decay · Fatigue · Drift</dd></div>
+                  <div><dt>Verification</dt><dd>17 Vitest suites + live deployment</dd></div>
                 </dl>
                 <div class="project-actions">
-                  <a class="project-link" href="https://x5cgntw49w-cell.github.io/chronofret/" target="_blank" rel="noreferrer">Open live application</a>
-                  <a class="project-link muted-link" href="https://github.com/x5cgntw49w-cell/chronofret" target="_blank" rel="noreferrer">Repository</a>
+                  <a class="project-link primary-action" href="https://mirza-luqman.github.io/chronofret/" target="_blank" rel="noreferrer">Open live app &#8599;</a>
+                  <button type="button" class="project-link detail-trigger" data-project-detail="chronofret">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/chronofret" target="_blank" rel="noreferrer">Repository</a>
                 </div>
               </div>
             </article>
 
+            <!-- 02: ACCESSDELTA (NEW!) -->
+            <article class="feature-card reveal" data-accent="blue">
+              <figure class="feature-media image-media accessdelta-media">
+                <img
+                  src="assets/accessdelta-report.png"
+                  alt="AccessDelta interactive accessibility change report showing new, resolved, and unchanged findings"
+                  width="1440"
+                  height="1100"
+                  loading="lazy"
+                >
+                <figcaption>Live interactive HTML report · 2 new, 2 resolved, 1 unchanged</figcaption>
+              </figure>
+              <div class="feature-copy">
+                <div class="feature-topline">
+                  <span class="category-chip chip-blue">DEVELOPER TOOLS &amp; CI</span>
+                  <span class="card-num">02 / LIVE · NEW</span>
+                </div>
+                <h3>AccessDelta</h3>
+                <p>
+                  Real-browser accessibility regression testing with element-level baseline comparisons,
+                  offline interactive HTML reports, and a Linux GitHub Action that gates PRs on new or
+                  worsened barriers without hiding existing backlogs.
+                </p>
+                <ul class="tech-pills" aria-label="AccessDelta stack">
+                  <li>Node 22+</li>
+                  <li>Playwright</li>
+                  <li>axe-core</li>
+                  <li>GitHub Actions</li>
+                  <li>WCAG A/AA</li>
+                </ul>
+                <dl class="feature-evidence">
+                  <div><dt>Verification</dt><dd>29 tests (core · CLI · browser)</dd></div>
+                  <div><dt>CI Contract</dt><dd>Exit 0 pass / 1 regress / 2 err</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <a class="project-link primary-action" href="https://mirza-luqman.github.io/accessdelta/" target="_blank" rel="noreferrer">Open live report &#8599;</a>
+                  <button type="button" class="project-link detail-trigger" data-project-detail="accessdelta">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/accessdelta" target="_blank" rel="noreferrer">Repository</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 03: SHAREVEIL (NEW! Interactive Redaction Sandbox) -->
+            <article class="feature-card reveal" data-accent="violet">
+              <div class="feature-media sandbox-media" aria-label="Interactive ShareVeil offline redaction preview">
+                <div class="terminal-toolbar">
+                  <span class="toolbar-title">shareveil redact --offline</span>
+                  <div class="toolbar-controls">
+                    <div class="terminal-tabs" role="group" aria-label="Choose ShareVeil input sample">
+                      <button type="button" data-sv-sample="log" aria-pressed="true">App Log</button>
+                      <button type="button" data-sv-sample="prompt" aria-pressed="false">AI Prompt</button>
+                      <button type="button" data-sv-sample="url" aria-pressed="false">Env / URL</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="shareveil-bar">
+                  <label class="sv-toggle">
+                    <input type="checkbox" id="sv-emails-toggle" checked>
+                    <span><code>--emails</code></span>
+                  </label>
+                  <div class="sv-mode-group" role="group" aria-label="Toggle raw or redacted output">
+                    <button type="button" data-sv-view="redacted" aria-pressed="true">Redacted</button>
+                    <button type="button" data-sv-view="raw" aria-pressed="false">Raw input</button>
+                  </div>
+                  <span class="sv-badge" id="sv-findings-badge" aria-live="polite">3 findings · exit 1</span>
+                </div>
+                <pre class="sandbox-pre" id="shareveil-output" aria-live="polite"></pre>
+              </div>
+              <div class="feature-copy">
+                <div class="feature-topline">
+                  <span class="category-chip chip-violet">SECURITY &amp; PRIVACY CLI</span>
+                  <span class="card-num">03 / NEW</span>
+                </div>
+                <h3>ShareVeil</h3>
+                <p>
+                  Zero-dependency offline Python CLI and library for stripping credentials from logs,
+                  AI prompts, and bug reports before sharing. Assigns consistent per-run placeholders so
+                  debugging context stays intact without leaking secrets.
+                </p>
+                <ul class="tech-pills" aria-label="ShareVeil stack">
+                  <li>Python 3.10–3.14</li>
+                  <li>Zero Dependencies</li>
+                  <li>Offline CLI</li>
+                  <li>Cross-Platform CI</li>
+                </ul>
+                <dl class="feature-evidence">
+                  <div><dt>Test Suite</dt><dd>22 passing (Linux / Win / macOS)</dd></div>
+                  <div><dt>Coverage</dt><dd>9 token &amp; credential classes</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="shareveil">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/shareveil" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 04: PROOFORCOUNTER (Interactive 3-Mode Terminal) -->
             <article class="feature-card reveal" data-accent="green">
               <div class="feature-media terminal-media">
                 <div class="terminal-toolbar">
-                  <span>proof-or-counter / benchmark</span>
-                  <div class="terminal-tabs" role="group" aria-label="Choose verification path">
-                    <button type="button" data-terminal-mode="proof" aria-pressed="true">Proof</button>
-                    <button type="button" data-terminal-mode="counterexample" aria-pressed="false">Counterexample</button>
+                  <span class="toolbar-title">proofcounter / verified race</span>
+                  <div class="terminal-tabs" role="group" aria-label="Choose verification trace">
+                    <button type="button" data-terminal-mode="proof" aria-pressed="true">Lean 4</button>
+                    <button type="button" data-terminal-mode="counterexample" aria-pressed="false">Exhaustive</button>
+                    <button type="button" data-terminal-mode="z3" aria-pressed="false">Z3 SMT</button>
                   </div>
                 </div>
-                <pre id="proof-terminal" aria-live="polite"><code><span>$</span> proofcounter solve semigroup_associativity
+                <pre id="proof-terminal" aria-live="polite"><code><span>$</span> proofcounter bench benchmarks/manifest.json
 
-strategy     lean_generation
+case         semigroup_associativity
+strategy     lean_generation (kernel-checked)
 result       PROVED
-certificate  build/certificates/associativity.lean
-verification Lean kernel accepted
+certificate  runs/associativity/proof.lean
+verification Lean 4 kernel accepted
 
-status       <strong>VERIFIED</strong></code></pre>
+status       <strong>VERIFIED · 5/5 CI BENCHMARK</strong></code></pre>
               </div>
               <div class="feature-copy">
-                <div class="feature-topline"><span>FORMAL REASONING</span><span>02</span></div>
+                <div class="feature-topline">
+                  <span class="category-chip chip-green">FORMAL REASONING</span>
+                  <span class="card-num">04</span>
+                </div>
                 <h3>ProofOrCounter</h3>
-                <p>Races Lean 4 proof generation against exhaustive and Z3 finite-countermodel search. Only verified artifacts are accepted.</p>
+                <p>
+                  Model-agnostic prove-or-disprove harness for algebraic conjectures that races Lean 4
+                  proof generation with bounded compiler error repair against exhaustive and Z3 finite
+                  countermodel search. Unsupported LLM opinions are never accepted as verdicts.
+                </p>
+                <ul class="tech-pills" aria-label="ProofOrCounter stack">
+                  <li>Python</li>
+                  <li>Lean 4</li>
+                  <li>Z3 SMT</li>
+                  <li>OpenAI-compat API</li>
+                </ul>
                 <dl class="feature-evidence">
-                  <div><dt>Benchmark</dt><dd>5 / 5 in CI</dd></div>
-                  <div><dt>Stack</dt><dd>Python, Lean 4, Z3</dd></div>
+                  <div><dt>CI Evidence</dt><dd>12 tests + 5/5 benchmark cases</dd></div>
+                  <div><dt>Verdicts</dt><dd>PROVED / DISPROVED / UNRESOLVED</dd></div>
                 </dl>
-                <a class="project-link" href="https://github.com/x5cgntw49w-cell/proof-or-counter" target="_blank" rel="noreferrer">Inspect repository</a>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="proof-or-counter">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/proof-or-counter" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
               </div>
             </article>
 
+            <!-- 05: MODEL OBSERVATORY -->
             <article class="feature-card reveal" data-accent="blue">
               <figure class="feature-media image-media report-media">
                 <img
                   src="assets/model-observatory-report.png"
                   alt="Generated Model Observatory classification evaluation report"
                   width="1440"
-                  height="2235"
+                  height="1772"
                   loading="lazy"
                 >
-                <figcaption>Deterministic synthetic demo report</figcaption>
+                <figcaption>Deterministic synthetic report · seed=17, n=600</figcaption>
               </figure>
               <div class="feature-copy">
-                <div class="feature-topline"><span>ML SYSTEMS / MLOPS</span><span>03</span></div>
+                <div class="feature-topline">
+                  <span class="category-chip chip-blue">ML SYSTEMS &amp; MLOPS</span>
+                  <span class="card-num">05 / LIVE</span>
+                </div>
                 <h3>Model Observatory</h3>
-                <p>Dependency-light classification diagnostics covering calibration, selective risk, subgroup gaps, and distribution shift.</p>
+                <p>
+                  Zero-dependency Python stdlib toolkit turning prediction JSONL into deterministic HTML
+                  and JSON diagnostics covering calibration (ECE, Brier, log loss), selective risk curves,
+                  worst-first subgroup slices, and JS/PSI distribution shift.
+                </p>
+                <ul class="tech-pills" aria-label="Model Observatory stack">
+                  <li>Python Stdlib</li>
+                  <li>Calibration / ECE</li>
+                  <li>Slice Analysis</li>
+                  <li>PSI &amp; JSD Drift</li>
+                </ul>
                 <dl class="feature-evidence">
-                  <div><dt>Tests</dt><dd>29 passing</dd></div>
-                  <div><dt>CI</dt><dd>Python 3.10-3.12</dd></div>
+                  <div><dt>Verification</dt><dd>29 passing tests (Py 3.10–3.12)</dd></div>
+                  <div><dt>Schema Guard</dt><dd>Strict probability &amp; ID validation</dd></div>
                 </dl>
                 <div class="project-actions">
-                  <a class="project-link" href="https://x5cgntw49w-cell.github.io/model-observatory/" target="_blank" rel="noreferrer">Open live report</a>
-                  <a class="project-link muted-link" href="https://github.com/x5cgntw49w-cell/model-observatory" target="_blank" rel="noreferrer">Repository</a>
+                  <a class="project-link primary-action" href="https://mirza-luqman.github.io/model-observatory/" target="_blank" rel="noreferrer">Open live report &#8599;</a>
+                  <button type="button" class="project-link detail-trigger" data-project-detail="model-observatory">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/model-observatory" target="_blank" rel="noreferrer">Repository</a>
                 </div>
               </div>
             </article>
 
+            <!-- 06: MULTIMODAL PERCEPTION (Upgraded Interactive Canvas) -->
             <article class="feature-card reveal" data-accent="cobalt">
               <figure class="feature-media landmark-media">
-                <canvas id="landmark-canvas" aria-label="Synthetic visualization of hand, face, and pose landmarks"></canvas>
-                <figcaption>Synthetic rendering of the tested landmark topology</figcaption>
+                <div class="canvas-hud">
+                  <div class="terminal-tabs" role="group" aria-label="Filter landmark modality overlay">
+                    <button type="button" data-landmark-mode="all" aria-pressed="true">All</button>
+                    <button type="button" data-landmark-mode="hand" aria-pressed="false">Hand 21</button>
+                    <button type="button" data-landmark-mode="face" aria-pressed="false">Face 468</button>
+                    <button type="button" data-landmark-mode="pose" aria-pressed="false">Pose 33</button>
+                  </div>
+                  <span class="canvas-event" id="landmark-event" aria-live="polite">gesture:victory · face:right · lean:left</span>
+                </div>
+                <canvas id="landmark-canvas" aria-label="Interactive synthetic visualization of hand, face, and pose landmarks"></canvas>
               </figure>
               <div class="feature-copy">
-                <div class="feature-topline"><span>REAL-TIME COMPUTER VISION</span><span>04</span></div>
+                <div class="feature-topline">
+                  <span class="category-chip chip-cobalt">REAL-TIME COMPUTER VISION</span>
+                  <span class="card-num">06</span>
+                </div>
                 <h3>Multimodal Perception</h3>
-                <p>Combines hand, face, and pose landmarks into interpretable gesture and posture events with a camera-independent geometry core.</p>
+                <p>
+                  Fuses 21 hand, 468 face mesh, and 33 body pose landmarks into interpretable gesture
+                  and posture events using a dependency-free geometry layer decoupled from the live
+                  MediaPipe/OpenCV webcam loop.
+                </p>
+                <ul class="tech-pills" aria-label="Multimodal Perception stack">
+                  <li>Python</li>
+                  <li>MediaPipe Holistic</li>
+                  <li>OpenCV</li>
+                  <li>JSONL Eval CLI</li>
+                </ul>
                 <dl class="feature-evidence">
-                  <div><dt>Landmarks</dt><dd>21 / 468 / 33</dd></div>
-                  <div><dt>Tests</dt><dd>14 passing</dd></div>
+                  <div><dt>Landmarks</dt><dd>21 Hand / 468 Face / 33 Pose</dd></div>
+                  <div><dt>Verification</dt><dd>14 deterministic CI tests</dd></div>
                 </dl>
-                <a class="project-link" href="https://github.com/x5cgntw49w-cell/multimodal-perception" target="_blank" rel="noreferrer">Inspect repository</a>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="multimodal-perception">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/multimodal-perception" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
               </div>
             </article>
 
+            <!-- 07: UNCERTAINTY-AWARE QA -->
             <article class="feature-card reveal" data-accent="amber">
               <figure class="feature-media image-media calibration-media">
                 <img
                   src="assets/uncertainty-calibration.png"
-                  alt="Calibration comparison for uncertainty-aware question answering"
+                  alt="Primary calibration comparison for uncertainty-aware question answering (n=100 pilot)"
                   width="1296"
                   height="1116"
                   loading="lazy"
                 >
-                <figcaption>Exploratory 100-question pilot</figcaption>
+                <figcaption>Exploratory pilot (n = 100) · Paired bootstrap 95% CIs</figcaption>
               </figure>
               <div class="feature-copy">
-                <div class="feature-topline"><span>LLM EVALUATION</span><span>05</span></div>
+                <div class="feature-topline">
+                  <span class="category-chip chip-amber">LLM UNCERTAINTY RESEARCH</span>
+                  <span class="card-num">07</span>
+                </div>
                 <h3>Uncertainty-Aware QA</h3>
-                <p>Studies black-box confidence signals using semantic clustering, calibration metrics, paired bootstrap intervals, and confirmatory pooling.</p>
+                <p>
+                  Reproducible black-box confidence evaluation across SQuAD and TruthfulQA comparing
+                  six signals—self-consistency, verbalized confidence, semantic entropy, SelfCheckGPT-style
+                  support, combined mean, and agreement-gated verbal confidence.
+                </p>
+                <ul class="tech-pills" aria-label="Uncertainty-Aware QA stack">
+                  <li>Python</li>
+                  <li>Semantic Entropy</li>
+                  <li>Bootstrap CIs</li>
+                  <li>Platt Reference</li>
+                </ul>
                 <dl class="feature-evidence">
-                  <div><dt>Tests</dt><dd>36 passing</dd></div>
-                  <div><dt>Pilot</dt><dd>n = 100</dd></div>
+                  <div><dt>Test Suite</dt><dd>36 passing tests + offline path</dd></div>
+                  <div><dt>Protocol</dt><dd>Preregistered confirmatory strata</dd></div>
                 </dl>
-                <a class="project-link" href="https://github.com/x5cgntw49w-cell/uncertainty-aware-qa" target="_blank" rel="noreferrer">Inspect repository</a>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="uncertainty-aware-qa">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/uncertainty-aware-qa" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 08: ROBOTICS CONTROL LAB (Promoted with real figure!) -->
+            <article class="feature-card reveal" data-accent="teal">
+              <figure class="feature-media image-media balance-media">
+                <img
+                  src="assets/balance-response.png"
+                  alt="Closed-loop self-balancing PID angle and torque response from an initial 0.18 rad lean"
+                  width="1280"
+                  height="832"
+                  loading="lazy"
+                >
+                <figcaption>Deterministic simulation · 10 ms step, 0.18 rad initial lean</figcaption>
+              </figure>
+              <div class="feature-copy">
+                <div class="feature-topline">
+                  <span class="category-chip chip-teal">EMBEDDED CONTROL &amp; SIM</span>
+                  <span class="card-num">08 / NEW EXHIBIT</span>
+                </div>
+                <h3>Robotics Control Lab</h3>
+                <p>
+                  Testable reference controllers extracted from student robotics prototypes: range-sensor
+                  hysteresis finite-state obstacle avoidance and a bounded PID self-balancing loop with
+                  integral anti-windup verified in deterministic simulation.
+                </p>
+                <ul class="tech-pills" aria-label="Robotics Control Lab stack">
+                  <li>Python</li>
+                  <li>PID Anti-Windup</li>
+                  <li>State Machine</li>
+                  <li>Matplotlib</li>
+                </ul>
+                <dl class="feature-evidence">
+                  <div><dt>Settling Spec</dt><dd>&plusmn;0.02 rad in 0.65 s (&lt;0.005 final)</dd></div>
+                  <div><dt>Verification</dt><dd>10 simulation-enforced tests</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="robotics-control-lab">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/robotics-control-lab" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
+              </div>
+            </article>
+
+            <!-- 09: REASONING EVAL LAB (Interactive Pipeline Trace!) -->
+            <article class="feature-card reveal" data-accent="cobalt">
+              <div class="feature-media terminal-media eval-media">
+                <div class="terminal-toolbar">
+                  <span class="toolbar-title">reasoning-eval / resumable pipeline</span>
+                  <div class="terminal-tabs" role="group" aria-label="Inspect reasoning eval stage">
+                    <button type="button" data-eval-stage="run" aria-pressed="true">Async Run</button>
+                    <button type="button" data-eval-stage="score" aria-pressed="false">Extract &amp; Score</button>
+                  </div>
+                </div>
+                <pre id="eval-terminal" aria-live="polite"><code><span>$</span> reasoning-eval run --backend openai-compatible \
+    --base-url http://localhost:8000/v1 --samples 4 --concurrency 8
+
+worker[0..7]  async semaphore active (resumable index)
+stream        append-only outputs/generations.jsonl
+retry_audit   latency_ms + attempt metadata recorded
+security      OPENAI_API_KEY read from env, never written
+
+status        <strong>RESUMABLE · DECOUPLED SCORING</strong></code></pre>
+              </div>
+              <div class="feature-copy">
+                <div class="feature-topline">
+                  <span class="category-chip chip-cobalt">LLM EVAL INFRASTRUCTURE</span>
+                  <span class="card-num">09 / NEW EXHIBIT</span>
+                </div>
+                <h3>Reasoning Eval Lab</h3>
+                <p>
+                  Reproducible mathematical-reasoning inference and evaluation pipeline featuring
+                  concurrency-limited async requests to vLLM/Ollama/LM Studio, append-only resumable
+                  JSONL logs, balanced-brace <code>\boxed{...}</code> extraction, and numeric equivalence scoring.
+                </p>
+                <ul class="tech-pills" aria-label="Reasoning Eval Lab stack">
+                  <li>Python asyncio</li>
+                  <li>vLLM / Ollama</li>
+                  <li>JSONL Resume</li>
+                  <li>Pass@k Scoring</li>
+                </ul>
+                <dl class="feature-evidence">
+                  <div><dt>Verification</dt><dd>9 CI tests (Py 3.10–3.12)</dd></div>
+                  <div><dt>Matching</dt><dd>Exact + decimal / fraction / %</dd></div>
+                </dl>
+                <div class="project-actions">
+                  <button type="button" class="project-link detail-trigger" data-project-detail="reasoning-eval-lab">Technical details</button>
+                  <a class="project-link muted-link" href="https://github.com/Mirza-Luqman/reasoning-eval-lab" target="_blank" rel="noreferrer">Inspect repository &#8599;</a>
+                </div>
               </div>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- ==================== 02 / FORMAL VERIFICATION & RESEARCH ==================== -->
       <section class="research" id="research" aria-labelledby="research-title">
-        <div class="shell research-layout">
-          <div class="research-copy reveal">
-            <p class="section-index light-index">02 / CURRENT RESEARCH</p>
-            <h2 id="research-title">Automated theorem proving for magma equations.</h2>
-            <p>
-              I am leading development of a private SAIR Stage 2 solver that
-              must return either a Lean 4 proof accepted by the kernel or a
-              validated finite operation-table counterexample.
-            </p>
-            <ul>
-              <li>Finite-model search over magmas of size 2-7</li>
-              <li>Symbolic unification and bidirectional BFS rewriting</li>
-              <li>Constancy-lemma synthesis and proof-library retrieval</li>
-              <li>LLM fallback driven by structured Lean error repair</li>
-            </ul>
-            <p class="private-note">Private while competition disclosure rules are unresolved. No prompts or judge protocols are exposed here.</p>
+        <div class="shell">
+          <div class="research-header reveal">
+            <div>
+              <p class="section-index light-index">02 / FORMAL VERIFICATION &amp; CURRENT RESEARCH</p>
+              <h2 id="research-title">Machine-checked proofs &amp; compositional equivalence.</h2>
+            </div>
+            <div class="research-switcher" role="tablist" aria-label="Select research track">
+              <button type="button" role="tab" id="tab-c2rust" aria-selected="true" aria-controls="panel-c2rust" data-research-tab="c2rust">
+                <span class="tab-kicker">OCT – NOV 2026</span>
+                <strong>C-to-Rust Equivalence Verifier v1.2</strong>
+              </button>
+              <button type="button" role="tab" id="tab-sair" aria-selected="false" aria-controls="panel-sair" data-research-tab="sair">
+                <span class="tab-kicker">2026 · COMPETITION</span>
+                <strong>SAIR Stage 2 Magma Solver</strong>
+              </button>
+            </div>
           </div>
-          <div class="research-architecture reveal" aria-label="High-level solver architecture">
-            <div class="architecture-input">
-              <span>INPUT</span>
-              <strong>Equational implication</strong>
+
+          <!-- TRACK 1: C-TO-RUST EQUIVALENCE VERIFIER v1.2 -->
+          <div class="research-panel" id="panel-c2rust" role="tabpanel" aria-labelledby="tab-c2rust">
+            <div class="research-layout">
+              <div class="research-copy">
+                <div class="research-badges">
+                  <span class="r-badge r-badge-green">318 / 318 TESTS PASSING</span>
+                  <span class="r-badge r-badge-blue">0 FALSE PROOFS</span>
+                  <span class="r-badge r-badge-amber">PRIVATE REPOSITORY</span>
+                </div>
+                <h3>Compositional LLVM-IR &amp; cvc5 equivalence checking for C-to-Rust translation.</h3>
+                <p>
+                  Transpiler-independent correspondence discovery, call-graph compositional verification,
+                  and symbolic memory/pointer checking between original C source trees and translated Rust
+                  library crates. Builds on an earlier hybrid differential-testing prototype that generated
+                  failing Cargo regression tests from uncovered branches.
+                </p>
+                <ul>
+                  <li>
+                    <strong>Compositional Summary Reuse:</strong> Tarjan SCC call-graph scheduling synthesizes
+                    formal <code>FunctionSummary</code> contracts strictly from <code>PROVED_SCOPED</code> pairs,
+                    eliminating exponential O(3<sup>k</sup>) CFG path explosion (up to <strong>231&times; speedup</strong> at k=6;
+                    proves k=8 in <code>5.9 ms</code>).
+                  </li>
+                  <li>
+                    <strong>Aliasing, Nullability &amp; Symbolic Heap:</strong> Explicitly models aliased (<code>a == b</code>)
+                    vs. disjoint (<code>a != b</code>) pointers, nullable pointers, and bounded heap liveness/initializedness
+                    (<code>malloc</code>/<code>free</code>/<code>__rust_alloc</code>) to reject aliasing bugs, null derefs, and use-after-free.
+                  </li>
+                  <li>
+                    <strong>Real-Repository Unlocks:</strong> Unlocks previously 0%-proved real crates
+                    (<code>quadtree</code>: 0 &rarr; 4/29 at k=3, 5/29 at k=5; <code>rect_pack_h</code>: 0 &rarr; 1/12 with
+                    <code>#![forbid(unsafe_code)]</code>) and advances <code>kd3</code> (6 &rarr; 9/26) with zero regressions.
+                  </li>
+                </ul>
+                <p class="private-note">
+                  <strong>Claim &amp; privacy boundary:</strong> <code>PROVED_SCOPED</code>, <code>DIFFERENT</code>, and
+                  <code>UNKNOWN</code> remain strictly distinct. Per-function proofs do not establish whole-repository equivalence;
+                  optional LLM hints never count as verification evidence. Source code remains private during ongoing research.
+                </p>
+                <div class="research-actions">
+                  <button type="button" class="button-research" data-project-detail="c2rust-verifier">Open full C2Rust v1.2 dossier</button>
+                </div>
+              </div>
+
+              <div class="research-visual-col">
+                <div class="research-architecture" aria-label="C-to-Rust Equivalence Verifier architecture">
+                  <div class="arch-title">VERIFIER v1.2 PIPELINE (LLVM IR + cvc5 1.3.1)</div>
+                  <div class="architecture-input">
+                    <span>INPUTS</span>
+                    <strong>Original C Tree + Translated Rust Crate</strong>
+                    <small>Clang / Rustc LLVM IR lowering · Transpiler-independent</small>
+                  </div>
+                  <div class="architecture-branch">
+                    <div>
+                      <span>STAGE 1 · DISCOVERY</span>
+                      <strong>Correspondence + Call Graph</strong>
+                      <small>Tarjan SCC · Bottom-up topological order · Hypotheses only</small>
+                    </div>
+                    <div>
+                      <span>STAGE 2 · COMPOSITIONAL</span>
+                      <strong>FunctionSummary Reuse</strong>
+                      <small>Precondition checks · Transitive invalidation · Fail-closed UNKNOWN</small>
+                    </div>
+                  </div>
+                  <div class="architecture-verify">
+                    <div>
+                      <span>MEMORY ENGINE</span>
+                      <strong>Aliased / Nullable Pointers</strong>
+                      <small>Symbolic heap liveness &amp; initializedness · IEEE-754 double</small>
+                    </div>
+                    <div>
+                      <span>SMT BACKEND</span>
+                      <strong>cvc5 Relational Proof</strong>
+                      <small>Native replay + differential counterexample checks</small>
+                    </div>
+                  </div>
+                  <div class="architecture-output">
+                    <span>STRICT 3-WAY VERDICT</span>
+                    <strong>PROVED_SCOPED &nbsp;|&nbsp; DIFFERENT &nbsp;|&nbsp; UNKNOWN</strong>
+                  </div>
+                </div>
+
+                <div class="ablation-card" aria-label="Controlled 5-way quantitative evaluation summary">
+                  <div class="ablation-head">
+                    <span>CONTROLLED QUANTITATIVE EVALUATION (v1.1 &rarr; v1.2-full)</span>
+                    <small>timeout=60s · loop_bound=16</small>
+                  </div>
+                  <div class="ablation-table-wrap">
+                    <table class="ablation-table">
+                      <thead>
+                        <tr>
+                          <th>Benchmark Set</th>
+                          <th>v1.1</th>
+                          <th>v1.2-full</th>
+                          <th>Gain</th>
+                          <th>False Proofs</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td><strong>Set A</strong> <small>3 frozen repos (52 fns)</small></td>
+                          <td>8 / 52</td>
+                          <td class="cell-hi">11 / 52 (21.2%)</td>
+                          <td class="cell-gain">+37.5%</td>
+                          <td class="cell-zero">0</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Set B</strong> <small>9 frozen repos (188 fns)</small></td>
+                          <td>14 / 188</td>
+                          <td class="cell-hi">22 / 188 (11.7%)</td>
+                          <td class="cell-gain">+57.1%</td>
+                          <td class="cell-zero">0</td>
+                        </tr>
+                        <tr>
+                          <td><strong>Set C</strong> <small>comp + mem suite (23 fns)</small></td>
+                          <td>7 / 23* <small>(2 false)</small></td>
+                          <td class="cell-hi">15 / 23 (65.2%)</td>
+                          <td class="cell-gain">+10 sound</td>
+                          <td class="cell-zero">0 <small>(vs 2)</small></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="architecture-branch">
-              <div><span>PROVE</span><strong>Rewrite search</strong><small>Unification / BFS / library retrieval</small></div>
-              <div><span>DISPROVE</span><strong>Finite-model search</strong><small>Exhaustive / Z3 / operation tables</small></div>
-            </div>
-            <div class="architecture-verify">
-              <div><span>VERIFY</span><strong>Lean 4 kernel</strong></div>
-              <div><span>VALIDATE</span><strong>Counterexample checker</strong></div>
-            </div>
-            <div class="architecture-output">
-              <span>OUTPUT</span>
-              <strong>Machine-verifiable certificate</strong>
+          </div>
+
+          <!-- TRACK 2: SAIR STAGE 2 MAGMA SOLVER -->
+          <div class="research-panel" id="panel-sair" role="tabpanel" aria-labelledby="tab-sair" hidden>
+            <div class="research-layout">
+              <div class="research-copy">
+                <div class="research-badges">
+                  <span class="r-badge r-badge-green">1ST UNIVERSITY-WIDE (STAGE 1)</span>
+                  <span class="r-badge r-badge-blue">~80TH OVERALL</span>
+                  <span class="r-badge r-badge-amber">PRIVATE COMPETITION CODE</span>
+                </div>
+                <h3>Automated theorem proving &amp; countermodel synthesis for magma equations.</h3>
+                <p>
+                  Leading development of a private SAIR Stage 2 solver for universal equational implications
+                  over magmas. Every returned verdict must be independently machine-checked: either a
+                  Lean 4 proof accepted by the kernel or a validated finite operation-table counterexample.
+                </p>
+                <ul>
+                  <li><strong>Finite-Model Disprover:</strong> Exhaustive and solver-assisted search over finite magmas of size 2–7 with full witness verification.</li>
+                  <li><strong>Symbolic Rewrite Engine:</strong> Symbolic unification, bidirectional breadth-first rewriting, constancy-lemma synthesis, and proof-library retrieval.</li>
+                  <li><strong>Error-Guided LLM Repair:</strong> Structured Lean 4 compiler diagnostics feed bounded repair attempts when direct search stalls.</li>
+                  <li><strong>Stage 1 Milestone:</strong> Led mathematical-reasoning prompt design and evaluation—58.0% accuracy, 43.4% F1, and 99.6% parse success.</li>
+                </ul>
+                <p class="private-note">
+                  <strong>Disclosure boundary:</strong> Competition-specific code, prompts, and judge protocols remain private pending disclosure clearance. The generalized public architecture is available in <em>ProofOrCounter</em>.
+                </p>
+                <div class="research-actions">
+                  <button type="button" class="button-research" data-project-detail="sair-stage-2">Open SAIR Stage 2 summary</button>
+                </div>
+              </div>
+
+              <div class="research-visual-col">
+                <div class="research-architecture" aria-label="High-level SAIR Stage 2 solver architecture">
+                  <div class="arch-title">SAIR STAGE 2 HYBRID SOLVER ARCHITECTURE</div>
+                  <div class="architecture-input">
+                    <span>INPUT</span>
+                    <strong>Equational Implication (E<sub>1</sub> &rArr; E<sub>2</sub>)</strong>
+                    <small>Universally quantified magma identity task</small>
+                  </div>
+                  <div class="architecture-branch">
+                    <div>
+                      <span>PROVE PATH</span>
+                      <strong>Symbolic Rewrite + LLM Repair</strong>
+                      <small>Unification · Bidirectional BFS · Constancy lemmas · Library</small>
+                    </div>
+                    <div>
+                      <span>DISPROVE PATH</span>
+                      <strong>Finite-Model Search (n = 2..7)</strong>
+                      <small>Exhaustive tables · Z3 encoding · Witness synthesis</small>
+                    </div>
+                  </div>
+                  <div class="architecture-verify">
+                    <div>
+                      <span>KERNEL CHECK</span>
+                      <strong>Lean 4 Compiler</strong>
+                      <small>Zero trust in unverified LLM steps</small>
+                    </div>
+                    <div>
+                      <span>MODEL CHECK</span>
+                      <strong>Counterexample Validator</strong>
+                      <small>Closure + axiom verification + falsifying witness</small>
+                    </div>
+                  </div>
+                  <div class="architecture-output">
+                    <span>OUTPUT</span>
+                    <strong>Machine-Verifiable Proof or Counterexample Certificate</strong>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="research-communication" aria-labelledby="pipeline-title">
+      <!-- ==================== 03 / RESEARCH COMMUNICATION (PIPGUARD) ==================== -->
+      <section class="research-communication" id="communication" aria-labelledby="pipeline-title">
         <div class="shell research-communication-layout">
           <div class="research-communication-heading reveal">
             <p class="section-index">03 / RESEARCH COMMUNICATION</p>
             <h2 id="pipeline-title">PipGuard: underground pipeline intelligence.</h2>
-            <p class="role-boundary"><strong>Confirmed role:</strong> technical presenter. The source deck identifies Chao Qin as project leader.</p>
+            <p class="role-boundary">
+              <strong>Confirmed role:</strong> Technical Presenter. The source presentation identifies
+              <strong>Chao Qin</strong> as project leader. Hardware and experimental metrics are team-reported
+              and attributed accordingly.
+            </p>
           </div>
           <div class="research-communication-copy reveal">
             <p>
-              Presented a team-led inspection concept that connects inertial
-              centerline mapping with low-visibility defect recognition. I
-              translated a cross-domain system into a coherent technical story
-              spanning navigation, imaging, deep learning, and field validation.
+              Presented a multidisciplinary inspection concept connecting inertial centerline mapping
+              with low-visibility visual defect recognition. Translated a cross-domain engineering stack
+              spanning navigation, optics, super-resolution, deep learning, and field validation into a
+              clear technical narrative for reviewers.
             </p>
-            <div class="pipeline-flow" aria-label="PipGuard system stages">
-              <span>INS / odometer fusion</span>
-              <span>Improved RTS smoothing</span>
-              <span>Polarization + super-resolution</span>
-              <span>Attention-based defect detection</span>
+            <div class="pipeline-flow" aria-label="PipGuard four-stage architecture">
+              <div class="pipe-stage">
+                <span>STAGE 01</span>
+                <strong>INS / Odometer Fusion</strong>
+                <small>Underground centerline localization</small>
+              </div>
+              <div class="pipe-stage">
+                <span>STAGE 02</span>
+                <strong>Improved RTS Smoothing</strong>
+                <small>Trajectory drift reduction</small>
+              </div>
+              <div class="pipe-stage">
+                <span>STAGE 03</span>
+                <strong>Polarization + Super-Res</strong>
+                <small>Turbid-water optical restoration</small>
+              </div>
+              <div class="pipe-stage">
+                <span>STAGE 04</span>
+                <strong>Attention Defect Detection</strong>
+                <small>YOLO-based real-time inspection</small>
+              </div>
             </div>
             <dl class="reported-evidence">
               <div><dt>Team-reported dataset</dt><dd>5,000+ pipeline images</dd></div>
               <div><dt>Deck validation</dt><dd>88.6% mAP@0.5 / 85 FPS</dd></div>
               <div><dt>Turbid-water case</dt><dd>0.87 mAP@0.5 / ~62 FPS</dd></div>
             </dl>
-            <p class="evidence-note">Metrics are quoted from the provided team presentation and are not presented as independently reproduced results or individual authorship.</p>
+            <p class="evidence-note">
+              All metrics above are quoted from the team presentation deck and are explicitly labeled as
+              team-reported evidence rather than independently reproduced measurements or solo authorship.
+            </p>
           </div>
         </div>
       </section>
 
-      <section class="library" aria-labelledby="library-title">
+      <!-- ==================== 04 / COMPLETE PROJECT LIBRARY ==================== -->
+      <section class="library" id="library" aria-labelledby="library-title">
         <div class="shell">
           <header class="section-head compact-head reveal">
             <div>
-              <p class="section-index">04 / PROJECT LIBRARY</p>
-              <h2 id="library-title">Explore by discipline.</h2>
+              <p class="section-index">04 / COMPLETE PROJECT LIBRARY</p>
+              <h2 id="library-title">All 12 systems, indexed by discipline.</h2>
             </div>
-            <p>Public repositories, private competition work, and documented deployment experience.</p>
+            <p>
+              Search by technology or filter by domain. Every row opens a structured technical dossier
+              with architecture diagrams, verified tests, and claim boundaries.
+            </p>
           </header>
 
-          <div class="filter-bar reveal" role="group" aria-label="Filter projects">
-            <button type="button" data-filter="all" aria-pressed="true">All</button>
-            <button type="button" data-filter="reasoning" aria-pressed="false">Reasoning</button>
-            <button type="button" data-filter="vision" aria-pressed="false">Vision</button>
-            <button type="button" data-filter="ml-systems" aria-pressed="false">ML systems</button>
-            <button type="button" data-filter="generative" aria-pressed="false">Generative AI</button>
-            <span id="project-count" aria-live="polite">9 projects</span>
-          </div>
-
-          <div class="project-list reveal">
-            <a class="library-row" data-category="vision ml-systems" href="https://github.com/x5cgntw49w-cell/chronofret" target="_blank" rel="noreferrer">
-              <span class="row-id">01</span><strong>ChronoFret</strong><span>Multimodal longitudinal performance coach</span><span>TypeScript / CV</span><b>Live</b>
-            </a>
-            <a class="library-row" data-category="ml-systems" href="https://github.com/x5cgntw49w-cell/model-observatory" target="_blank" rel="noreferrer">
-              <span class="row-id">02</span><strong>Model Observatory</strong><span>Calibration, slices, drift, reporting</span><span>Python</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="reasoning" href="https://github.com/x5cgntw49w-cell/proof-or-counter" target="_blank" rel="noreferrer">
-              <span class="row-id">03</span><strong>ProofOrCounter</strong><span>Verified prove-or-disprove harness</span><span>Lean 4 / Z3</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="vision" href="https://github.com/x5cgntw49w-cell/multimodal-perception" target="_blank" rel="noreferrer">
-              <span class="row-id">04</span><strong>Multimodal Perception</strong><span>Hand, face, and pose event pipeline</span><span>OpenCV</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="ml-systems reasoning" href="https://github.com/x5cgntw49w-cell/uncertainty-aware-qa" target="_blank" rel="noreferrer">
-              <span class="row-id">05</span><strong>Uncertainty-Aware QA</strong><span>Black-box confidence evaluation</span><span>Python / LLMs</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="reasoning ml-systems" href="https://github.com/x5cgntw49w-cell/reasoning-eval-lab" target="_blank" rel="noreferrer">
-              <span class="row-id">06</span><strong>Reasoning Eval Lab</strong><span>Concurrent, resumable model evaluation</span><span>Python</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="ml-systems" href="https://github.com/x5cgntw49w-cell/robotics-control-lab" target="_blank" rel="noreferrer">
-              <span class="row-id">07</span><strong>Robotics Control Lab</strong><span>PID and obstacle-avoidance simulation</span><span>Control</span><b>Public</b>
-            </a>
-            <a class="library-row" data-category="generative" href="https://github.com/x5cgntw49w-cell/prompt-storyboard-studio" target="_blank" rel="noreferrer">
-              <span class="row-id">08</span><strong>Prompt Storyboard Studio</strong><span>Validated storyboard-to-prompt compiler</span><span>GenAI</span><b>Public</b>
-            </a>
-            <div class="library-row private-row" data-category="reasoning">
-              <span class="row-id">09</span><strong>SAIR Stage 2 Solver</strong><span>Hybrid theorem proving and countermodels</span><span>Python / Lean 4</span><b>Private</b>
+          <div class="library-controls reveal">
+            <div class="filter-bar" role="group" aria-label="Filter projects by discipline">
+              <button type="button" data-filter="all" aria-pressed="true">All</button>
+              <button type="button" data-filter="formal" aria-pressed="false">Formal &amp; Reasoning</button>
+              <button type="button" data-filter="ml-systems" aria-pressed="false">ML &amp; Eval</button>
+              <button type="button" data-filter="vision" aria-pressed="false">Vision &amp; Robotics</button>
+              <button type="button" data-filter="devtools" aria-pressed="false">DevTools &amp; Security</button>
+              <button type="button" data-filter="generative" aria-pressed="false">Generative AI</button>
+            </div>
+            <div class="library-search-wrap">
+              <label for="library-search" class="sr-only">Search projects</label>
+              <input
+                type="search"
+                id="library-search"
+                placeholder="Search name, stack, or keyword (e.g. cvc5, Playwright, Lean)..."
+                autocomplete="off"
+              >
+              <span id="project-count" aria-live="polite">12 projects</span>
             </div>
           </div>
+
+          <div class="project-list reveal" id="project-list">
+            <div class="library-row" data-category="vision ml-systems" data-search="chronofret guitar yin pitch mediapipe react typescript indexeddb multimodal time-series live">
+              <span class="row-id">01</span>
+              <div class="row-title">
+                <strong>ChronoFret</strong>
+                <small>Local-first longitudinal guitar coach · 17 tests</small>
+              </div>
+              <span class="row-stack">TypeScript · React · MediaPipe · Web Audio</span>
+              <span class="status-pill status-live">Live</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="chronofret">Details</button>
+                <a class="row-ext" href="https://mirza-luqman.github.io/chronofret/" target="_blank" rel="noreferrer" aria-label="Open ChronoFret live app">Live &#8599;</a>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/chronofret" target="_blank" rel="noreferrer" aria-label="Open ChronoFret repository">Repo</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="devtools" data-search="accessdelta accessibility a11y playwright axe-core wcag github actions ci javascript node live">
+              <span class="row-id">02</span>
+              <div class="row-title">
+                <strong>AccessDelta</strong>
+                <small>Element-level accessibility regression diffing &amp; GitHub Action · 29 tests</small>
+              </div>
+              <span class="row-stack">Node 22 · Playwright · axe-core · Actions</span>
+              <span class="status-pill status-live">Live</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="accessdelta">Details</button>
+                <a class="row-ext" href="https://mirza-luqman.github.io/accessdelta/" target="_blank" rel="noreferrer" aria-label="Open AccessDelta live report">Live &#8599;</a>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/accessdelta" target="_blank" rel="noreferrer" aria-label="Open AccessDelta repository">Repo</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="devtools" data-search="shareveil secret redaction security privacy cli python logs ai prompts zero dependencies">
+              <span class="row-id">03</span>
+              <div class="row-title">
+                <strong>ShareVeil</strong>
+                <small>Offline zero-dependency credential redaction CLI for logs &amp; prompts · 22 tests</small>
+              </div>
+              <span class="row-stack">Python 3.10+ · Zero-Dep CLI · Security</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="shareveil">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/shareveil" target="_blank" rel="noreferrer" aria-label="Open ShareVeil repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row private-row" data-category="formal" data-search="c2rust equivalence verifier llvm ir cvc5 smt rust c compositional symbolic heap aliasing pointer tarjan scc private">
+              <span class="row-id">04</span>
+              <div class="row-title">
+                <strong>C-to-Rust Equivalence Verifier (v1.2)</strong>
+                <small>Compositional LLVM-IR &amp; cvc5 pointer/heap verifier · 318 tests · 0 false proofs</small>
+              </div>
+              <span class="row-stack">Python · LLVM IR · cvc5 · Clang · Rust</span>
+              <span class="status-pill status-private">Private</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="c2rust-verifier">Details</button>
+                <span class="row-muted">Research</span>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="formal" data-search="prooforcounter proof or counter lean 4 z3 smt algebraic conjectures theorem proving countermodel python">
+              <span class="row-id">05</span>
+              <div class="row-title">
+                <strong>ProofOrCounter</strong>
+                <small>Verified Lean 4 vs. exhaustive/Z3 prove-or-disprove harness · 12 tests + 5/5 CI</small>
+              </div>
+              <span class="row-stack">Python · Lean 4 · Z3 · OpenAI-compat</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="proof-or-counter">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/proof-or-counter" target="_blank" rel="noreferrer" aria-label="Open ProofOrCounter repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="ml-systems" data-search="model observatory classification calibration ece brier slice drift psi jsd mlops python html report live">
+              <span class="row-id">06</span>
+              <div class="row-title">
+                <strong>Model Observatory</strong>
+                <small>Dependency-light calibration, selective risk, slices &amp; drift diagnostics · 29 tests</small>
+              </div>
+              <span class="row-stack">Python Stdlib · Calibration · Drift</span>
+              <span class="status-pill status-live">Live</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="model-observatory">Details</button>
+                <a class="row-ext" href="https://mirza-luqman.github.io/model-observatory/" target="_blank" rel="noreferrer" aria-label="Open Model Observatory live report">Live &#8599;</a>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/model-observatory" target="_blank" rel="noreferrer" aria-label="Open Model Observatory repository">Repo</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="vision" data-search="multimodal perception computer vision opencv mediapipe hand face pose landmarks gesture python">
+              <span class="row-id">07</span>
+              <div class="row-title">
+                <strong>Multimodal Perception</strong>
+                <small>Real-time 21/468/33 landmark fusion &amp; camera-independent geometry core · 14 tests</small>
+              </div>
+              <span class="row-stack">Python · OpenCV · MediaPipe Holistic</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="multimodal-perception">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/multimodal-perception" target="_blank" rel="noreferrer" aria-label="Open Multimodal Perception repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="ml-systems formal" data-search="uncertainty aware qa llm calibration semantic entropy squad truthfulqa bootstrap platt python">
+              <span class="row-id">08</span>
+              <div class="row-title">
+                <strong>Uncertainty-Aware QA</strong>
+                <small>Black-box LLM confidence signals, paired bootstrap CIs &amp; confirmatory pooling · 36 tests</small>
+              </div>
+              <span class="row-stack">Python · LLMs · Semantic Entropy</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="uncertainty-aware-qa">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/uncertainty-aware-qa" target="_blank" rel="noreferrer" aria-label="Open Uncertainty-Aware QA repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="formal ml-systems" data-search="reasoning eval lab math llm vllm ollama asyncio jsonl resumable boxed extraction evaluation python">
+              <span class="row-id">09</span>
+              <div class="row-title">
+                <strong>Reasoning Eval Lab</strong>
+                <small>Concurrent resumable math-reasoning inference &amp; exact/numeric scoring · 9 tests</small>
+              </div>
+              <span class="row-stack">Python · asyncio · vLLM · JSONL</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="reasoning-eval-lab">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/reasoning-eval-lab" target="_blank" rel="noreferrer" aria-label="Open Reasoning Eval Lab repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="vision ml-systems" data-search="robotics control lab pid anti-windup obstacle avoidance self-balancing simulation embedded python">
+              <span class="row-id">10</span>
+              <div class="row-title">
+                <strong>Robotics Control Lab</strong>
+                <small>Hysteresis obstacle avoidance &amp; anti-windup PID self-balancing sim · 10 tests</small>
+              </div>
+              <span class="row-stack">Python · PID Control · Simulation</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="robotics-control-lab">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/robotics-control-lab" target="_blank" rel="noreferrer" aria-label="Open Robotics Control Lab repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row" data-category="generative devtools" data-search="prompt storyboard studio generative video aigc compiler validation continuity drone python">
+              <span class="row-id">11</span>
+              <div class="row-title">
+                <strong>Prompt Storyboard Studio</strong>
+                <small>Schema-validated storyboard-to-prompt compiler for generative video · 6 tests</small>
+              </div>
+              <span class="row-stack">Python · Schema Compiler · AIGC</span>
+              <span class="status-pill status-public">Public</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="prompt-storyboard-studio">Details</button>
+                <a class="row-ext" href="https://github.com/Mirza-Luqman/prompt-storyboard-studio" target="_blank" rel="noreferrer" aria-label="Open Prompt Storyboard Studio repository">Repo &#8599;</a>
+              </div>
+            </div>
+
+            <div class="library-row private-row" data-category="formal" data-search="sair stage 2 solver magma equations lean 4 theorem proving finite models competition private">
+              <span class="row-id">12</span>
+              <div class="row-title">
+                <strong>SAIR Stage 2 Magma Solver</strong>
+                <small>Hybrid Lean 4 proof &amp; finite countermodel engine for equational implications</small>
+              </div>
+              <span class="row-stack">Python · Lean 4 · Symbolic BFS</span>
+              <span class="status-pill status-private">Private</span>
+              <div class="row-actions">
+                <button type="button" class="row-btn" data-project-detail="sair-stage-2">Details</button>
+                <span class="row-muted">Competition</span>
+              </div>
+            </div>
+          </div>
+          <p class="empty-library" id="empty-library" hidden>No matching projects found. Clear the search query or switch back to <strong>All</strong>.</p>
         </div>
       </section>
 
-      <section class="practice" aria-labelledby="practice-title">
+      <!-- ==================== 05 / ENGINEERING PRACTICE ==================== -->
+      <section class="practice" id="practice" aria-labelledby="practice-title">
         <div class="shell">
           <header class="section-head compact-head reveal">
             <div>
               <p class="section-index">05 / ENGINEERING PRACTICE</p>
-              <h2 id="practice-title">How I approach AI systems.</h2>
+              <h2 id="practice-title">How I build trustworthy systems.</h2>
             </div>
+            <p>
+              Whether verifying C-to-Rust memory safety, evaluating LLM calibration, or gating pull requests
+              for accessibility, every project follows four non-negotiable standards.
+            </p>
           </header>
+
           <div class="practice-grid reveal">
-            <article><span>01</span><h3>Measure behavior</h3><p>Define metrics, baselines, slices, and failure conditions before presenting a model result.</p></article>
-            <article><span>02</span><h3>Separate evidence</h3><p>Label pilots, simulations, synthetic demonstrations, and measured outcomes so they cannot be confused.</p></article>
-            <article><span>03</span><h3>Verify outputs</h3><p>Use kernel checks, certificate validation, schema validation, and deterministic tests where the domain allows it.</p></article>
-            <article><span>04</span><h3>Make it reproducible</h3><p>Prefer documented CLIs, machine-readable artifacts, fixed seeds, and CI over one-off notebook screenshots.</p></article>
+            <article>
+              <span class="practice-num">01</span>
+              <h3>Measure behavior first</h3>
+              <p>Define metrics, baselines, worst-case slices, and explicit failure conditions before celebrating an aggregate score.</p>
+            </article>
+            <article>
+              <span class="practice-num">02</span>
+              <h3>Separate evidence tiers</h3>
+              <p>Clearly label deterministic simulations, exploratory pilots, team-reported figures, and machine-checked proofs so they are never conflated.</p>
+            </article>
+            <article>
+              <span class="practice-num">03</span>
+              <h3>Fail closed &amp; verify</h3>
+              <p>Rely on Lean 4 kernels, cvc5/Z3 SMT checks, strict schema contracts, and honest error exit codes—never unsupported guesses.</p>
+            </article>
+            <article>
+              <span class="practice-num">04</span>
+              <h3>Ship reproducible artifacts</h3>
+              <p>Prefer zero-bloat CLIs, resumable JSONL logs, fixed seeds, standalone HTML reports, and multi-version CI over fragile notebooks.</p>
+            </article>
+          </div>
+
+          <div class="verification-strip reveal" aria-label="Verification coverage breakdown across projects">
+            <div class="v-strip-head">
+              <span>VERIFICATION SPECTRUM ACROSS REPOSITORIES</span>
+              <strong>502 automated tests · 3 formal solvers (Lean 4, cvc5, Z3) · 3 live public demos</strong>
+            </div>
+            <div class="v-bars">
+              <div class="v-bar-row">
+                <span>Formal &amp; Symbolic (C2Rust v1.2, ProofOrCounter)</span>
+                <div class="v-track"><div class="v-fill fill-green" style="--w: 100%"></div></div>
+                <b>330 tests + 5 Lean/Z3 benches</b>
+              </div>
+              <div class="v-bar-row">
+                <span>ML &amp; LLM Evaluation (Uncertainty QA, Model Observatory, Reasoning Eval)</span>
+                <div class="v-track"><div class="v-fill fill-blue" style="--w: 62%"></div></div>
+                <b>74 tests + live HTML report</b>
+              </div>
+              <div class="v-bar-row">
+                <span>DevTools &amp; Security (AccessDelta, ShareVeil, Storyboard Studio)</span>
+                <div class="v-track"><div class="v-fill fill-violet" style="--w: 50%"></div></div>
+                <b>57 tests + live a11y demo</b>
+              </div>
+              <div class="v-bar-row">
+                <span>Multimodal, Vision &amp; Control (ChronoFret, Perception, Robotics Lab)</span>
+                <div class="v-track"><div class="v-fill fill-teal" style="--w: 38%"></div></div>
+                <b>41 tests + live SPA</b>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- ==================== 06 / EXPERIENCE & MILESTONES ==================== -->
       <section class="experience" id="experience" aria-labelledby="experience-title">
         <div class="shell experience-layout">
           <div class="experience-heading reveal">
-            <p class="section-index light-index">06 / EXPERIENCE</p>
-            <h2 id="experience-title">Research, deployment, and operations.</h2>
-            <p>BSc Artificial Intelligence at Harbin Engineering University, expected July 2027.</p>
+            <p class="section-index light-index">06 / EXPERIENCE &amp; MILESTONES</p>
+            <h2 id="experience-title">Research, tooling, deployment, and operations.</h2>
+            <p>BSc Artificial Intelligence at Harbin Engineering University (Sep 2023 – Jul 2027 Expected).</p>
+            <a class="exp-resume-btn" href="assets/luqman-arshad-resume.pdf" target="_blank" rel="noreferrer">View Resume PDF &#8599;</a>
           </div>
           <div class="timeline">
             <article class="timeline-row reveal">
-              <div><span>2026</span><strong>Technical Presenter</strong></div>
-              <div><h3>PipGuard multidisciplinary research concept</h3><p>Presented the team’s end-to-end pipeline inspection architecture across INS/odometer positioning, improved RTS smoothing, polarization restoration, super-resolution, and attention-based defect detection. Chao Qin is identified as project leader in the source deck.</p></div>
+              <div><span>OCT – NOV 2026</span><strong>Formal Verification Researcher</strong></div>
+              <div>
+                <h3>C-to-Rust Equivalence Verifier (v1.0 &rarr; v1.2)</h3>
+                <p>Built an automated C-to-Rust correspondence discovery and compositional LLVM-IR/cvc5 verifier with Tarjan SCC summary reuse (up to 231&times; speedup), aliased/nullable pointer semantics, and bounded symbolic heap verification. Reached 318/318 passing tests and 0 false proofs across three frozen benchmark sets.</p>
+              </div>
             </article>
             <article class="timeline-row reveal">
-              <div><span>2026 - PRESENT</span><strong>Team Lead / Prompt Designer</strong></div>
-              <div><h3>SAIR Mathematics Distillation Challenge</h3><p>Leading the private Stage 2 solver and previously led Stage 1 prompt design and evaluation. Ranked first university-wide and approximately 80th overall.</p></div>
+              <div><span>SEP 2026</span><strong>Open-Source Tooling Author</strong></div>
+              <div>
+                <h3>AccessDelta &amp; ShareVeil</h3>
+                <p>Shipped two focused developer tools: AccessDelta (Playwright + axe-core element-level accessibility diffing, offline HTML report, GitHub Action, 29 tests) and ShareVeil (zero-dependency offline secret redaction CLI across Linux/macOS/Windows CI, 22 tests).</p>
+              </div>
+            </article>
+            <article class="timeline-row reveal">
+              <div><span>2026</span><strong>Technical Presenter</strong></div>
+              <div>
+                <h3>PipGuard Multidisciplinary Research Concept</h3>
+                <p>Presented the team’s underground pipeline inspection architecture across INS/odometer positioning, improved RTS smoothing, polarization restoration, super-resolution, and attention-based defect detection. Chao Qin is identified as project leader in the source deck.</p>
+              </div>
+            </article>
+            <article class="timeline-row reveal">
+              <div><span>2026 – PRESENT</span><strong>Team Lead / Prompt Designer</strong></div>
+              <div>
+                <h3>SAIR Mathematics Distillation Challenge</h3>
+                <p>Leading the private Stage 2 hybrid Lean 4 theorem-proving and finite-countermodel solver. Previously led Stage 1 prompt design and evaluation—ranking 1st university-wide and ~80th overall with 58.0% accuracy, 43.4% F1, and 99.6% parse success.</p>
+              </div>
             </article>
             <article class="timeline-row reveal">
               <div><span>MODEL DEPLOYMENT</span><strong>Computer Vision Research</strong></div>
-              <div><h3>Texture-preserving diffusion</h3><p>Deployed and exercised a CVPR 2024 implementation on Alibaba Cloud PAI-DSW with an NVIDIA A10 GPU.</p></div>
+              <div>
+                <h3>Texture-Preserving Diffusion Deployment</h3>
+                <p>Deployed and exercised a CVPR 2024 texture-preserving diffusion implementation on Alibaba Cloud PAI-DSW running on an NVIDIA A10 GPU.</p>
+              </div>
             </article>
             <article class="timeline-row reveal">
-              <div><span>FIRST PRIZE</span><strong>AIGC Prompt Video Competition</strong></div>
-              <div><h3>Generative video direction</h3><p>Designed prompt sequences, scene composition, and narrative continuity for a future-and-drone technology video.</p></div>
+              <div><span>FIRST PRIZE · HARBIN</span><strong>AIGC Prompt Video Competition</strong></div>
+              <div>
+                <h3>Generative Video Direction</h3>
+                <p>Won first prize designing prompt sequences, scene composition, and narrative continuity for a future-and-drone technology film; later formalized the workflow into Prompt Storyboard Studio.</p>
+              </div>
             </article>
             <article class="timeline-row reveal">
-              <div><span>JUN 2023 - AUG 2024</span><strong>Data and Operations Coordinator</strong></div>
-              <div><h3>United CDL Training School</h3><p>Supported advertising, client communication, scheduling, and reporting in a remote cross-time-zone role. Campaign work improved conversion by approximately 30%.</p></div>
+              <div><span>JUN 2023 – AUG 2024</span><strong>Data &amp; Operations Coordinator</strong></div>
+              <div>
+                <h3>United CDL Training School</h3>
+                <p>Supported digital advertising, client communications, scheduling automation, and performance reporting for a U.S. driver training school in a remote cross-time-zone role; campaign improvements increased conversion by ~30%.</p>
+              </div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="skills" aria-labelledby="skills-title">
-        <div class="shell skills-layout">
-          <div class="skills-heading reveal">
-            <p class="section-index">07 / TECHNICAL FOUNDATION</p>
-            <h2 id="skills-title">Tools mapped to problems.</h2>
+      <!-- ==================== 07 / TECHNICAL FOUNDATION ==================== -->
+      <section class="skills" id="skills" aria-labelledby="skills-title">
+        <div class="shell">
+          <header class="section-head compact-head reveal">
+            <div>
+              <p class="section-index">07 / TECHNICAL FOUNDATION</p>
+              <h2 id="skills-title">Tools mapped directly to shipped work.</h2>
+            </div>
+            <p>Six capability clusters backed by public repositories, formal verification suites, and coursework.</p>
+          </header>
+
+          <div class="skills-grid reveal">
+            <article class="skill-card">
+              <span class="skill-kicker">01 · FORMAL METHODS</span>
+              <h3>Verification &amp; Reasoning</h3>
+              <div class="skill-tags">
+                <span>Lean 4</span><span>cvc5</span><span>Z3 SMT</span><span>LLVM IR</span>
+                <span>Compositional Summaries</span><span>Symbolic Heap</span><span>Finite Countermodels</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-kicker">02 · ML &amp; EVALUATION</span>
+              <h3>Machine Learning &amp; MLOps</h3>
+              <div class="skill-tags">
+                <span>PyTorch</span><span>TensorFlow</span><span>Calibration / ECE</span><span>Drift (PSI / JSD)</span>
+                <span>Selective Risk</span><span>Bootstrap CIs</span><span>Diffusion Models</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-kicker">03 · PERCEPTION</span>
+              <h3>Computer Vision &amp; Sensing</h3>
+              <div class="skill-tags">
+                <span>OpenCV</span><span>MediaPipe Holistic</span><span>Web Audio API</span><span>YIN Pitch</span>
+                <span>Landmark Geometry</span><span>Multimodal Fusion</span><span>Time-Series</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-kicker">04 · LLM INFRA</span>
+              <h3>Reasoning &amp; Evaluation Systems</h3>
+              <div class="skill-tags">
+                <span>vLLM</span><span>OpenAI-Compat APIs</span><span>Asyncio Pipelines</span><span>Semantic Entropy</span>
+                <span>Lean Error Repair</span><span>Resumable JSONL</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-kicker">05 · DEVTOOLS &amp; SECURITY</span>
+              <h3>Testing &amp; Privacy Tooling</h3>
+              <div class="skill-tags">
+                <span>Playwright</span><span>axe-core</span><span>GitHub Actions</span><span>Offline Redaction</span>
+                <span>CLI Design</span><span>Deterministic Reports</span>
+              </div>
+            </article>
+            <article class="skill-card">
+              <span class="skill-kicker">06 · CORE SYSTEMS</span>
+              <h3>Languages &amp; Robotics</h3>
+              <div class="skill-tags">
+                <span>Python</span><span>TypeScript</span><span>JavaScript</span><span>C++</span>
+                <span>Rust / Cargo</span><span>React</span><span>IndexedDB</span><span>PID Control</span>
+                <span>pytest / Vitest</span>
+              </div>
+            </article>
           </div>
-          <div class="skills-matrix reveal">
-            <div><h3>Machine learning</h3><p>PyTorch, TensorFlow, model evaluation, calibration, diffusion models, experiment design</p></div>
-            <div><h3>Reasoning systems</h3><p>Lean 4, Z3, proof search, finite-model search, symbolic rewriting, proof repair</p></div>
-            <div><h3>Computer vision & sensing</h3><p>OpenCV, MediaPipe, YIN pitch detection, landmark geometry, Web Audio, multimodal feature fusion</p></div>
-            <div><h3>Engineering</h3><p>Python, TypeScript, React, C++, IndexedDB, GitHub Actions, pytest, Vitest, reproducible workflows</p></div>
-          </div>
-          <div class="education-strip reveal">
-            <div><span>EDUCATION</span><strong>BSc Artificial Intelligence</strong><small>Harbin Engineering University / July 2027</small></div>
-            <div><span>LANGUAGES</span><strong>English, Urdu, Chinese, Thai</strong><small>Fluent / Native / Conversational / Basic</small></div>
+
+          <div class="education-grid reveal">
+            <div class="edu-card">
+              <span class="edu-kicker">EDUCATION · SEP 2023 – JUL 2027 (EXPECTED)</span>
+              <h3>Bachelor of Science in Artificial Intelligence</h3>
+              <p class="edu-school">Harbin Engineering University &middot; Harbin, China</p>
+              <p class="edu-coursework">
+                <strong>Relevant Coursework:</strong> Linear Algebra, Calculus, Discrete Mathematics, Probability &amp; Statistics,
+                Data Structures &amp; Algorithms, Machine Learning, Deep Learning, Computer Vision, NLP, Robotics.
+              </p>
+            </div>
+            <div class="edu-card">
+              <span class="edu-kicker">LANGUAGES &amp; COLLABORATION</span>
+              <h3>Multilingual Remote-Ready Communication</h3>
+              <dl class="lang-list">
+                <div><dt>English</dt><dd>Fluent</dd></div>
+                <div><dt>Urdu</dt><dd>Native</dd></div>
+                <div><dt>Chinese</dt><dd>Conversational</dd></div>
+                <div><dt>Thai</dt><dd>Basic</dd></div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- ==================== 08 / CONTACT ==================== -->
       <section class="contact" id="contact" aria-labelledby="contact-title">
         <div class="shell contact-layout reveal">
-          <div>
+          <div class="contact-lead">
             <p class="section-index light-index">08 / CONTACT</p>
-            <h2 id="contact-title">Let’s build something that can be trusted.</h2>
-            <p>Available for paid AI/ML, computer vision, generative AI, and research engineering internships.</p>
+            <h2 id="contact-title">Let’s build systems that can be trusted.</h2>
+            <p>
+              Available for paid AI/ML, formal verification, computer vision, generative AI,
+              and research engineering internships across remote or on-site teams.
+            </p>
+            <div class="contact-quick">
+              <button type="button" class="copy-email-btn" id="copy-email-btn" data-email="arshadluqman474@gmail.com">
+                Copy email address
+              </button>
+              <a class="contact-pdf-btn" href="assets/luqman-arshad-resume.pdf" target="_blank" rel="noreferrer">
+                Download Resume PDF &#8599;
+              </a>
+            </div>
           </div>
           <div class="contact-directory">
             <a href="mailto:arshadluqman474@gmail.com"><span>Email</span><strong>arshadluqman474@gmail.com</strong></a>
             <a href="tel:+8619845475712"><span>Phone</span><strong>+86 198 4547 5712</strong></a>
-            <a href="https://www.linkedin.com/in/luqman-arshad-72a9812a8" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>luqman-arshad-72a9812a8</strong></a>
-            <a href="https://github.com/x5cgntw49w-cell" target="_blank" rel="noreferrer"><span>GitHub</span><strong>x5cgntw49w-cell</strong></a>
-            <a href="assets/luqman-arshad-resume.pdf" target="_blank"><span>Resume</span><strong>Download PDF</strong></a>
+            <a href="https://github.com/Mirza-Luqman" target="_blank" rel="noreferrer"><span>GitHub</span><strong>github.com/Mirza-Luqman &#8599;</strong></a>
+            <a href="https://www.linkedin.com/in/luqman-arshad-72a9812a8" target="_blank" rel="noreferrer"><span>LinkedIn</span><strong>luqman-arshad-72a9812a8 &#8599;</strong></a>
+            <a href="assets/luqman-arshad-resume.pdf" target="_blank" rel="noreferrer"><span>Resume</span><strong>luqman-arshad-resume.pdf &#8599;</strong></a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <span>Luqman Arshad</span>
-      <span>Harbin, China</span>
-      <span id="copyright-year">2026</span>
+      <div class="shell footer-inner">
+        <span><strong>Luqman Arshad</strong> &middot; AI / ML &amp; Verification Systems</span>
+        <span>Harbin, China &middot; <a href="https://github.com/Mirza-Luqman/luqman-arshad" target="_blank" rel="noreferrer">Portfolio Source</a></span>
+        <span id="copyright-year">2026</span>
+      </div>
     </footer>
+
+    <!-- ==================== TECHNICAL DOSSIER MODAL ==================== -->
+    <div
+      class="dossier-backdrop"
+      id="dossier-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dossier-title"
+      hidden
+    >
+      <div class="dossier-dialog" role="document">
+        <header class="dossier-header">
+          <div>
+            <div class="dossier-meta-row">
+              <span class="dossier-category" id="dossier-category"></span>
+              <span class="dossier-status" id="dossier-status"></span>
+            </div>
+            <h2 id="dossier-title"></h2>
+            <p class="dossier-subtitle" id="dossier-subtitle"></p>
+          </div>
+          <button type="button" class="dossier-close" id="dossier-close" aria-label="Close technical dossier">
+            &times;
+          </button>
+        </header>
+
+        <div class="dossier-body">
+          <div class="dossier-section">
+            <h3>Problem &amp; Engineering Motivation</h3>
+            <p id="dossier-problem"></p>
+          </div>
+
+          <div class="dossier-section">
+            <h3>System Architecture Pipeline</h3>
+            <div class="dossier-flow" id="dossier-flow"></div>
+          </div>
+
+          <div class="dossier-section">
+            <h3>Key Engineering Decisions</h3>
+            <ul class="dossier-highlights" id="dossier-highlights"></ul>
+          </div>
+
+          <div class="dossier-section">
+            <h3>Verified Evidence &amp; Stack</h3>
+            <dl class="dossier-stats" id="dossier-stats"></dl>
+          </div>
+
+          <div class="dossier-section" id="dossier-cli-wrap">
+            <div class="dossier-cli-head">
+              <h3>Quick-Start &amp; Verification Command</h3>
+              <button type="button" class="copy-cmd-btn" id="copy-cmd-btn">Copy</button>
+            </div>
+            <pre class="dossier-cli"><code id="dossier-cli"></code></pre>
+          </div>
+
+          <div class="dossier-boundary">
+            <strong>Interpretation &amp; Claim Boundary</strong>
+            <p id="dossier-boundary"></p>
+          </div>
+        </div>
+
+        <footer class="dossier-footer" id="dossier-actions"></footer>
+      </div>
+    </div>
   </body>
 </html>
